@@ -26,12 +26,12 @@ def verify_claim(payload: Dict[str, Any]) -> Dict[str, Any]:
     if input_type == "text":
         judgment = run_text(input_obj, output_kind=output_kind)
         _attach_continuous_score(judgment, input_obj)
-        return {"judgment": judgment.model_dump()}  # pydantic to dict
+        return {"judgment": judgment.model_dump(mode="json")}  # JSON-friendly types
 
     if input_type == "structured":
         judgment = run_structured(input_obj, output_kind=output_kind)
         _attach_continuous_score(judgment, input_obj)
-        return {"judgment": judgment.model_dump()}
+        return {"judgment": judgment.model_dump(mode="json")}
 
     raise ValueError("Unsupported input.type; expected 'text' or 'structured'")
 
