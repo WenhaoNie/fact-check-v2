@@ -4,6 +4,7 @@ from typing import Any, Dict
 
 from lib.logging import get_logger
 from services.pipeline_text import run as run_text
+from services.pipeline_structured import run as run_structured
 
 
 logger = get_logger(__name__)
@@ -23,5 +24,8 @@ def verify_claim(payload: Dict[str, Any]) -> Dict[str, Any]:
         judgment = run_text(input_obj, output_kind=output_kind)
         return {"judgment": judgment.model_dump()}  # pydantic to dict
 
-    # Unsupported type in US1
-    raise ValueError("Unsupported input.type for US1: expected 'text'")
+    if input_type == "structured":
+        judgment = run_structured(input_obj, output_kind=output_kind)
+        return {"judgment": judgment.model_dump()}
+
+    raise ValueError("Unsupported input.type; expected 'text' or 'structured'")

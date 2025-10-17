@@ -78,11 +78,11 @@ description: "Task list for Claim Verification API (Structured Judgments)"
 
 **Independent Test**: 提交结构化载荷，返回字段齐全、类型正确的判断对象，证据/理由/结论齐备。
 
-- [ ] T023 [P] [US2] Contract test for POST /v1/verify (structured input) in `tests/contract/test_verify_structured.py`
-- [ ] T024 [P] [US2] Integration test for structured flow in `tests/integration/test_structured_flow.py`
-- [ ] T025 [US2] Implement structured pipeline in `src/services/pipeline_structured.py` (field validation & normalization)
-- [ ] T026 [P] [US2] Ensure response alignment with input fields in `src/services/verification_service.py` (subject, time_window)
-- [ ] T027 [US2] Extend API handler to support `type=structured` in `src/services/api_handlers.py`
+ - [X] T023 [P] [US2] Contract test for POST /v1/verify (structured input) in `tests/contract/test_verify_structured.py`
+ - [X] T024 [P] [US2] Integration test for structured flow in `tests/integration/test_structured_flow.py`
+ - [X] T025 [US2] Implement structured pipeline in `src/services/pipeline_structured.py` (field validation & normalization)
+ - [X] T026 [P] [US2] Ensure response alignment with input fields in `src/services/verification_service.py` (subject, time_window)
+ - [X] T027 [US2] Extend API handler to support `type=structured` in `src/services/api_handlers.py`
 
 **Checkpoint**: User Stories 1 AND 2 both work independently
 
