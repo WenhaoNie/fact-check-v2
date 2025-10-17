@@ -9,6 +9,7 @@ from lib.query_strategy import generate_queries
 from lib.evidence_utils import tag_credibility, best_excerpt
 from lib.policy import evaluate_evidence_credibility
 from lib.fetcher import fetch_url
+from lib.llm import reason_claim
 from models.schemas import EvidenceItem, Judgment
 from models.audit import AuditInfo, ToolTrace, Usage
 
@@ -91,6 +92,15 @@ def run(input_payload: Dict[str, Any], output_kind: str = "both") -> Judgment:
 
     # Step 4: policy
     policy = evaluate_evidence_credibility([e.credibility or "web" for e in evidence])
+
+    # Step 5: optional LLM reasoning
+    llm_reasons: List[str] = []
+    llm_score = None
+    try:
+        llm_reasons, llm_score = reason_claim(claim_text, [e.model_dump() for e in evidence])
+    except Exception:
+        llm_reasons, llm_score = [], None
+
     reasons: List[str] = []
     binary = "unknown"
     if policy.sufficient:
@@ -101,6 +111,8 @@ def run(input_payload: Dict[str, Any], output_kind: str = "both") -> Judgment:
         else:
             reasons.append("权威来源不足或不可访问")
 
+    if llm_reasons:
+        reasons = llm_reasons[:4] + reasons[:1]
+
     audit = AuditInfo(generated_at=_now_iso(), tool_traces=traces, usage=Usage(duration_ms=None))
     return Judgment(kind=output_kind, binary=binary, reasons=reasons, evidence=evidence, audit=audit)
-

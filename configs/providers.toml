@@ -12,5 +12,4 @@ key_file = "/keys/BRAVE_API_KEY"
 
 [llm]
 # Select your preferred provider in runtime environment (e.g., openai|google|volcengine)
-provider = ""
-
+provider = "openai"

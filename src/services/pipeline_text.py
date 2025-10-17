@@ -8,6 +8,7 @@ from lib.search_adapter import get_search_adapter, SearchResult
 from lib.query_strategy import generate_queries
 from lib.evidence_utils import tag_credibility, best_excerpt
 from lib.fetcher import fetch_url
+from lib.llm import reason_claim
 from lib.policy import evaluate_evidence_credibility
 from models.schemas import EvidenceItem, Judgment
 from models.audit import AuditInfo, ToolTrace, Usage
@@ -98,11 +99,19 @@ def run(input_payload: Dict[str, Any], output_kind: str = "both") -> Judgment:
     except Exception as e:
         traces.append(ToolTrace(step=2, action="get_adapter", args={}, ok=False, error=str(e)))
 
-    # Step 3: assemble evidence (no fetch yet)
+    # Step 3: assemble evidence (fetch pages for excerpts)
     evidence = _assemble_evidence(results, claim_text) if results else []
 
     # Step 4: apply evidence policy
     policy = evaluate_evidence_credibility([e.credibility or "web" for e in evidence])
+
+    # Step 5: optional LLM reasoning (OpenAI) – best-effort
+    llm_reasons: List[str] = []
+    llm_score = None
+    try:
+        llm_reasons, llm_score = reason_claim(claim_text, [e.model_dump() for e in evidence])
+    except Exception:
+        llm_reasons, llm_score = [], None
 
     reasons: List[str] = []
     binary = "unknown"
@@ -113,6 +122,10 @@ def run(input_payload: Dict[str, Any], output_kind: str = "both") -> Judgment:
             reasons.append("仅一般网页来源，可信度有限")
         else:
             reasons.append("权威来源不足或不可访问")
+
+    # Prefer LLM reasons when available; keep one policy line for transparency
+    if llm_reasons:
+        reasons = llm_reasons[:4] + reasons[:1]
 
     audit = AuditInfo(generated_at=_now_iso(), tool_traces=traces, usage=Usage(duration_ms=None))
     judgment = Judgment(kind=output_kind, binary=binary, reasons=reasons, evidence=evidence, audit=audit)
