@@ -16,7 +16,8 @@ logger = get_logger(__name__)
 
 DEFAULT_TIMEOUT = 10.0
 DEFAULT_UA = (
-    "FactCheck-Agent/0.1 (+https://example.com; compliance=robots,ToS; contact=ops@example.com)"
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+    "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0 Safari/537.36"
 )
 
 

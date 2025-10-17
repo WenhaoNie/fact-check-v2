@@ -21,3 +21,6 @@
 {"session_id":"0199f057-38b0-73d2-80fe-20e074443fe6","ts":1760695237,"text":"OK let's push"}
 {"session_id":"0199f057-38b0-73d2-80fe-20e074443fe6","ts":1760695359,"text":"https://github.com/WenhaoNie/fact-check-v2.git"}
 {"session_id":"0199f057-38b0-73d2-80fe-20e074443fe6","ts":1760695816,"text":"Can we test this tool from end to end now?"}
+{"session_id":"0199f057-38b0-73d2-80fe-20e074443fe6","ts":1760697144,"text":"Please create a set of test questions (10 questions) and run an E2E test to show me the results"}
+{"session_id":"0199f057-38b0-73d2-80fe-20e074443fe6","ts":1760698184,"text":"Tune binary is better. And I want to see the test results for the other 2 LLM Providers"}
+{"session_id":"0199f057-38b0-73d2-80fe-20e074443fe6","ts":1760699578,"text":"Use your best judgement. So far I'm not very happy with the results. What do you think?"}

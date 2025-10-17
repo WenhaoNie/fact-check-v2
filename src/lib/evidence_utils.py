@@ -10,13 +10,20 @@ logger = get_logger(__name__)
 
 
 AUTHORITY_DOMAINS = (
-    # Common authority-like domains; extend via config later
+    # Common authority-like and official sources; extend via config later
     "sec.gov",
     "gov.cn",
-    "caixin.com",
-    "chinadaily.com.cn",
-    "bloomberg.com",
+    "who.int",
+    "cdc.gov",
+    "olympics.com",
+    "spacex.com",
+    "nasa.gov",
+    "apple.com",
+    "blog.google",
+    "about.google",
+    # high-cred newswires
     "reuters.com",
+    "bloomberg.com",
     "ft.com",
 )
 
@@ -63,4 +70,3 @@ def best_excerpt(page_text: str, claim_terms: Iterable[str], max_len: int = 240)
     # Fallback: first sentence-ish
     m = re.search(r"[^.!?。！？]{20,300}[.!?。！？]", txt)
     return (m.group(0) if m else txt[:max_len]).strip()
-

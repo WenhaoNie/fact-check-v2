@@ -48,9 +48,9 @@ def _openai_reason(claim_text: str, evidence: List[Dict[str, Any]], model: str =
 
     sys_prompt = (
         "You are a precise fact-checking assistant. Based ONLY on the provided evidence, "
-        "write concise reasons and suggest a truth probability. Do not include chain-of-thought. "
+        "determine whether the claim is supported, refuted, or uncertain. Do not include chain-of-thought. "
         "Return strictly a JSON object with keys: reasons (array of 2-4 short strings), "
-        "suggested_score (number 0..1)."
+        "suggested_score (number 0..1), stance (one of: support, refute, uncertain)."
     )
     content = {
         "claim": claim_text,
@@ -82,24 +82,27 @@ def _openai_reason(claim_text: str, evidence: List[Dict[str, Any]], model: str =
         return None
 
 
-def reason_claim(claim_text: str, evidence: List[Dict[str, Any]]) -> Tuple[List[str], Optional[float]]:
+def reason_claim(claim_text: str, evidence: List[Dict[str, Any]]) -> Tuple[List[str], Optional[float], Optional[str]]:
     """Try to get LLM-backed reasons and an optional score suggestion.
 
     Returns (reasons, suggested_score). If LLM not available or fails, returns ([], None).
     """
     provider = _get_llm_provider()
     if provider != "openai":
-        return [], None
+        return [], None, None
     out = _openai_reason(claim_text, evidence)
     if not out:
-        return [], None
+        return [], None, None
     reasons = out.get("reasons") or []
     score = out.get("suggested_score")
+    stance = out.get("stance")
     try:
         score = float(score) if score is not None else None
     except Exception:
         score = None
     # Truncate reasons lengths conservatively
     reasons = [str(r)[:240] for r in reasons][:5]
-    return reasons, score
-
+    stance = str(stance).lower() if isinstance(stance, str) else None
+    if stance not in {"support", "refute", "uncertain"}:
+        stance = None
+    return reasons, score, stance

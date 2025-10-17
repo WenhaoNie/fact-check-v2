@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import time
 from typing import Any, Dict, List
+import os
 
 from lib.logging import get_logger
 from lib.search_adapter import get_search_adapter, SearchResult
@@ -50,7 +51,8 @@ def _assemble_evidence(results: List[SearchResult], claim_text: str) -> List[Evi
                 credibility=cred,
             )
         )
-        if len(items) >= 3:
+        max_ev = int(os.getenv("EVIDENCE_MAX", "3"))
+        if len(items) >= max_ev:
             break
     return items
 
@@ -78,10 +80,11 @@ def run(input_payload: Dict[str, Any], output_kind: str = "both") -> Judgment:
     # Step 2: search
     try:
         adapter = get_search_adapter()
+        search_topk = int(os.getenv("SEARCH_TOPK", "3"))
         for i, q in enumerate(queries, start=1):
             t = time.time()
             try:
-                rs = adapter.search(q, topk=3)
+                rs = adapter.search(q, topk=search_topk)
                 results.extend(rs)
                 traces.append(
                     ToolTrace(step=2, action="search", args={"query": q}, ok=True, latency_ms=int((time.time() - t) * 1000))
@@ -108,10 +111,13 @@ def run(input_payload: Dict[str, Any], output_kind: str = "both") -> Judgment:
     # Step 5: optional LLM reasoning (OpenAI) – best-effort
     llm_reasons: List[str] = []
     llm_score = None
+    llm_stance = None
     try:
-        llm_reasons, llm_score = reason_claim(claim_text, [e.model_dump() for e in evidence])
-    except Exception:
-        llm_reasons, llm_score = [], None
+        llm_reasons, llm_score, llm_stance = reason_claim(claim_text, [e.model_dump() for e in evidence])
+        traces.append(ToolTrace(step=3, action="llm_reason", args={"n_reasons": len(llm_reasons), "suggested_score": llm_score, "stance": llm_stance}, ok=bool(llm_reasons)))
+    except Exception as e:
+        traces.append(ToolTrace(step=3, action="llm_reason", args={}, ok=False, error=str(e)))
+        llm_reasons, llm_score, llm_stance = [], None, None
 
     reasons: List[str] = []
     binary = "unknown"
