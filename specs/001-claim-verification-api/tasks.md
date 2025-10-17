@@ -94,12 +94,12 @@ description: "Task list for Claim Verification API (Structured Judgments)"
 
 **Independent Test**: 对相同陈述多次调用，评分与理由小幅波动且不改变主要结论；响应包含审计元信息。
 
-- [ ] T028 [P] [US3] Contract test for continuous scoring in `tests/contract/test_verify_continuous.py`
-- [ ] T029 [P] [US3] Integration test for score consistency in `tests/integration/test_continuous_consistency.py`
-- [ ] T030 [US3] Implement calibrated continuous scoring flow in `src/services/verification_service.py` (use `src/lib/calibration.py`)
-- [ ] T031 [P] [US3] Update API handler to support `output.kind=continuous` in `src/services/api_handlers.py`
-- [ ] T032 [US3] Add consistency smoothing utilities in `src/lib/consistency.py` and integrate in `src/services/verification_service.py`
-- [ ] T033 [US3] Update evidence policy/threshold guidance in `src/lib/policy.py` (document default threshold e.g. 0.5)
+ - [X] T028 [P] [US3] Contract test for continuous scoring in `tests/contract/test_verify_continuous.py`
+ - [X] T029 [P] [US3] Integration test for score consistency in `tests/integration/test_continuous_consistency.py`
+ - [X] T030 [US3] Implement calibrated continuous scoring flow in `src/services/verification_service.py` (use `src/lib/calibration.py`)
+ - [X] T031 [P] [US3] Update API handler to support `output.kind=continuous` in `src/services/api_handlers.py`
+ - [X] T032 [US3] Add consistency smoothing utilities in `src/lib/consistency.py` and integrate in `src/services/verification_service.py`
+ - [X] T033 [US3] Update evidence policy/threshold guidance in `src/lib/policy.py` (document default threshold e.g. 0.5)
 
 **Checkpoint**: All user stories independently functional
 

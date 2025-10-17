@@ -18,6 +18,9 @@ class PolicyResult:
         return f"PolicyResult(sufficient={self.sufficient}, limited_trust={self.limited_trust}, reason={self.reason!r})"
 
 
+DEFAULT_THRESHOLD = 0.5  # Guidance: default decision threshold for binary mapping
+
+
 def evaluate_evidence_credibility(credibilities: Iterable[str]) -> PolicyResult:
     """Apply evidence policy:
 
@@ -34,4 +37,3 @@ def evaluate_evidence_credibility(credibilities: Iterable[str]) -> PolicyResult:
 
     # Only general web sources
     return PolicyResult(False, True, "only general web sources; 可信度有限")
-
