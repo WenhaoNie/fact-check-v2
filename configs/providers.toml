@@ -1,0 +1,16 @@
+# Providers configuration for Claim Verification API
+# This file does not contain secrets. Keys are read from /keys as provided by user.
+
+[search]
+provider = "brave"
+# tiers: base | pro | enterprise
+tier = "base"
+
+[search.brave]
+# The adapter reads the API key from /keys/BRAVE_API_KEY by default
+key_file = "/keys/BRAVE_API_KEY"
+
+[llm]
+# Select your preferred provider in runtime environment (e.g., openai|google|volcengine)
+provider = ""
+

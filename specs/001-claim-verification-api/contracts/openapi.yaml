@@ -1,0 +1,235 @@
+openapi: 3.1.0
+info:
+  title: Claim Verification API
+  version: 0.1.0
+  description: |
+    Accepts a natural-language or structured claim and returns a structured
+    judgment (binary yes/no and/or a calibrated 0–1 probability), with reasons
+    and linkable evidence excerpts. Quality over latency; returns unknown when
+    evidence is insufficient or restricted by compliance.
+servers:
+  - url: https://api.example.com
+paths:
+  /v1/verify:
+    post:
+      summary: Verify a claim and return a structured judgment
+      security:
+        - ApiKeyAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VerifyRequest'
+            examples:
+              natural_language:
+                summary: Natural language claim
+                value:
+                  input:
+                    type: text
+                    claim_text: "公司A在2024年Q4营收同比增长超20%"
+                    time_window: "2024Q4"
+                    locale: zh
+                  output:
+                    kind: both
+              structured:
+                summary: Structured claim
+                value:
+                  input:
+                    type: structured
+                    claim:
+                      subject: "Company A"
+                      text: "Revenue YoY growth > 20%"
+                      time_window: "2024-10-01..2024-12-31"
+                      locale: en
+                  output:
+                    kind: continuous
+      responses:
+        '200':
+          description: Structured judgment
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VerifyResponse'
+              examples:
+                ok:
+                  value:
+                    judgment:
+                      kind: both
+                      binary: yes
+                      score: 0.83
+                      reasons:
+                        - "权威财报披露Q4营收同比+23%"
+                        - "行业报道与公司公告一致"
+                      evidence:
+                        - url: "https://sec.example/filings/abc/q4"
+                          title: "Company A FY2024 Q4 Report"
+                          quote: "Revenue increased by 23% YoY in Q4"
+                          fetched_at: "2025-10-17T08:00:00Z"
+                          credibility: authority
+                      audit:
+                        generated_at: "2025-10-17T08:00:02Z"
+                        tool_traces: []
+                        usage:
+                          tokens_prompt: 0
+                          tokens_completion: 0
+                          duration_ms: 2000
+                unknown:
+                  value:
+                    judgment:
+                      kind: binary
+                      binary: unknown
+                      reasons:
+                        - "权威来源不足或不可访问"
+                      evidence: []
+                      audit:
+                        generated_at: "2025-10-17T08:00:02Z"
+                        tool_traces: []
+                        usage:
+                          tokens_prompt: 0
+                          tokens_completion: 0
+                          duration_ms: 1500
+        '400':
+          description: Invalid request
+        '401':
+          description: Unauthorized (missing/invalid API key)
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-Key
+  schemas:
+    VerifyRequest:
+      type: object
+      required: [input]
+      properties:
+        input:
+          $ref: '#/components/schemas/ClaimInput'
+        output:
+          $ref: '#/components/schemas/OutputPreference'
+    ClaimInput:
+      type: object
+      required: [type]
+      properties:
+        type:
+          type: string
+          enum: [text, structured]
+        claim_text:
+          type: string
+          description: Natural-language assertion (required when type=text)
+        claim:
+          $ref: '#/components/schemas/Claim'
+        time_window:
+          type: string
+          description: Optional time window (e.g., "2024Q4" or "YYYY-MM-DD..YYYY-MM-DD")
+        locale:
+          type: string
+          enum: [zh, en, auto]
+          default: auto
+    Claim:
+      type: object
+      properties:
+        id:
+          type: string
+        subject:
+          type: string
+        text:
+          type: string
+        time_window:
+          type: string
+        locale:
+          type: string
+          enum: [zh, en, auto]
+          default: auto
+        notes:
+          type: string
+    OutputPreference:
+      type: object
+      properties:
+        kind:
+          type: string
+          enum: [binary, continuous, both]
+          default: both
+    VerifyResponse:
+      type: object
+      required: [judgment]
+      properties:
+        judgment:
+          $ref: '#/components/schemas/Judgment'
+    Judgment:
+      type: object
+      required: [kind, reasons, audit]
+      properties:
+        kind:
+          type: string
+          enum: [binary, continuous, both]
+        binary:
+          type: string
+          enum: [yes, no, unknown]
+          nullable: true
+        score:
+          type: number
+          format: float
+          minimum: 0
+          maximum: 1
+          nullable: true
+          description: Calibrated probability of truth in [0,1]
+        reasons:
+          type: array
+          minItems: 1
+          maxItems: 5
+          items:
+            type: string
+        evidence:
+          type: array
+          items:
+            $ref: '#/components/schemas/EvidenceItem'
+        missing_candidates:
+          type: array
+          items:
+            type: string
+        suspicious_items:
+          type: array
+          items:
+            type: string
+        audit:
+          $ref: '#/components/schemas/AuditInfo'
+    EvidenceItem:
+      type: object
+      required: [url, title, quote, fetched_at]
+      properties:
+        url:
+          type: string
+          format: uri
+        title:
+          type: string
+        quote:
+          type: string
+        fetched_at:
+          type: string
+          format: date-time
+        credibility:
+          type: string
+          enum: [authority, registry, web, limited]
+    AuditInfo:
+      type: object
+      required: [generated_at]
+      properties:
+        generated_at:
+          type: string
+          format: date-time
+        tool_traces:
+          type: array
+          items:
+            type: object
+        usage:
+          type: object
+          properties:
+            tokens_prompt:
+              type: integer
+            tokens_completion:
+              type: integer
+            duration_ms:
+              type: integer
+

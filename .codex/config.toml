@@ -1,0 +1,4 @@
+model = "gpt-5"
+model_reasoning_effort = "high"
+[projects."/Users/wenhaonie/fact-check-v2"]
+trust_level = "trusted"
