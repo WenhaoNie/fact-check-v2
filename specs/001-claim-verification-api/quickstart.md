@@ -21,6 +21,17 @@ insufficient or restricted, the system returns `unknown` with explanation.
 - Default search provider: Brave (base tier). Set `SEARCH_PROVIDER=brave` if needed.
 - Alternatively, export environment variables mapping to the key file.
 
+## Enabling LLM Reasoning (Optional)
+- Set LLM provider: `LLM_PROVIDER=openai` (default from configs/providers.toml)
+- Provide key: place at `/keys/OPENAI_API_KEY` or export `OPENAI_API_KEY`
+- Optional model override: `OPENAI_MODEL=gpt-4o-mini`
+- Behavior: Adds concise reasons and an optional suggested score; binary remains conservative unless evidence is strong.
+
+## Caching (Performance)
+- Safe TTL cache is enabled for search and page fetches (in-process):
+  - Search: ~300s TTL; Fetch: ~600s TTL
+- Disable by restarting process; cache is memory-only.
+
 ## Request Examples
 
 Natural language input:
@@ -46,6 +57,27 @@ curl -sS -X POST \
     "output": {"kind": "continuous"}
   }'
 ```
+
+## CLI Usage (Local)
+Run without a server using the built-in CLI:
+
+```bash
+export PYTHONPATH=src
+printf '{"input": {"type": "text", "claim_text": "公司A在2024年Q4营收同比增长超20%", "locale": "zh"}, "output": {"kind": "both"}}' \
+  | python3 -m cli.verify
+```
+
+Structured claim via CLI:
+
+```bash
+export PYTHONPATH=src
+printf '{"input": {"type": "structured", "claim": {"subject": "Company A", "text": "Revenue YoY growth > 20%", "time_window": "2024-10-01..2024-12-31", "locale": "en"}}, "output": {"kind": "continuous"}}' \
+  | python3 -m cli.verify
+```
+
+## Security Notes
+- API key enforcement: by default accepts any non-empty key for local dev.
+- To require allowlist: create `/keys/APP_API_KEYS` (one key per line) and set `AUTH_ALLOW_ALL=0`.
 
 ## Response Example
 ```json

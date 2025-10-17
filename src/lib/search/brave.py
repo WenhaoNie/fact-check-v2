@@ -6,6 +6,7 @@ from typing import List, Optional
 from ..search_adapter import SearchAdapter, SearchResult
 from ..logging import get_logger
 from ..retry import with_retries
+from ..cache import memoize_ttl
 import httpx
 
 
@@ -33,6 +34,7 @@ class BraveAdapter(SearchAdapter):
         if not self.api_key:
             logger.warning("Brave API key not found at env BRAVE_API_KEY or %s", key_file)
 
+    @memoize_ttl(ttl=300.0)
     @with_retries(max_attempts=3, base_delay=0.5)
     def _request(self, q: str, topk: int) -> dict:
         if not self.api_key:

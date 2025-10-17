@@ -107,11 +107,11 @@ description: "Task list for Claim Verification API (Structured Judgments)"
 
 ## Phase N: Polish & Cross-Cutting Concerns
 
-- [ ] T034 [P] Update Quickstart with final examples in `specs/001-claim-verification-api/quickstart.md`
-- [ ] T035 Code cleanup and refactoring across `src/`
-- [ ] T036 Performance tuning across `src/lib/*` (batching, request merging, cache where safe)
-- [ ] T037 Security hardening in `src/lib/auth.py` and `src/lib/logging.py` (redaction, error handling)
-- [ ] T038 Run Quickstart validation steps in `specs/001-claim-verification-api/quickstart.md`
+ - [X] T034 [P] Update Quickstart with final examples in `specs/001-claim-verification-api/quickstart.md`
+ - [X] T035 Code cleanup and refactoring across `src/`
+ - [X] T036 Performance tuning across `src/lib/*` (batching, request merging, cache where safe)
+ - [X] T037 Security hardening in `src/lib/auth.py` and `src/lib/logging.py` (redaction, error handling)
+ - [X] T038 Run Quickstart validation steps in `specs/001-claim-verification-api/quickstart.md`
 
 ---
 

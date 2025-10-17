@@ -8,6 +8,7 @@ import httpx
 
 from .logging import get_logger
 from .retry import with_retries
+from .cache import memoize_ttl
 
 
 logger = get_logger(__name__)
@@ -36,6 +37,7 @@ def _build_client(timeout: float) -> httpx.Client:
     return httpx.Client(timeout=timeout, headers={"User-Agent": DEFAULT_UA})
 
 
+@memoize_ttl(ttl=600.0)
 @with_retries(max_attempts=3, base_delay=0.5)
 def fetch_url(url: str, timeout: float = DEFAULT_TIMEOUT) -> FetchResult:
     """HTTP GET fetch with conservative timeouts and retries (≤2 retries).
@@ -59,4 +61,3 @@ def fetch_url(url: str, timeout: float = DEFAULT_TIMEOUT) -> FetchResult:
             headers=headers,
             fetched_at=_now_iso(),
         )
-

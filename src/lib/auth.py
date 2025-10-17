@@ -31,12 +31,15 @@ def is_valid_api_key(provided: Optional[str]) -> bool:
             return True
         logger.warning("API key provided but not found in allowlist file")
         return False
-    # No allowlist file configured → accept any non-empty key for local dev
-    return True
+    # No allowlist file configured
+    allow_all = os.getenv("AUTH_ALLOW_ALL", "1") in {"1", "true", "TRUE", "yes", "YES"}
+    if allow_all:
+        return True
+    logger.warning("No allowlist present and AUTH_ALLOW_ALL disabled")
+    return False
 
 
 def require_api_key(headers: dict) -> None:
     key = headers.get("X-API-Key") or headers.get("x-api-key")
     if not is_valid_api_key(key):
         raise PermissionError("Unauthorized: missing or invalid API key")
-
