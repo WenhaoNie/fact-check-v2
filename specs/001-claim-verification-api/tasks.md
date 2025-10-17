@@ -59,14 +59,14 @@ description: "Task list for Claim Verification API (Structured Judgments)"
 
 **Independent Test**: 通过单一接口提交一句自然语言陈述，响应包含结论、理由、≥1条证据（链接+摘录）；证据不足时为 `unknown` 并含原因。
 
-- [ ] T015 [P] [US1] Contract test for POST /v1/verify (text input) in `tests/contract/test_verify_text.py`
-- [ ] T016 [P] [US1] Integration test for natural language flow in `tests/integration/test_text_flow.py`
-- [ ] T017 [US1] Implement text→Claim normalization pipeline in `src/services/pipeline_text.py` (locale, time_window handling)
-- [ ] T018 [US1] Integrate query strategy + search + fetch + evidence assembly in `src/services/pipeline_text.py`
-- [ ] T019 [US1] Implement `unknown` fallback & reason mapping in `src/services/pipeline_text.py`
-- [ ] T020 [P] [US1] Wire `VerificationService.verify_claim()` to text pipeline in `src/services/verification_service.py` (output kind=both)
-- [ ] T021 [US1] Implement API handler for text input in `src/services/api_handlers.py` (validate against contracts/openapi.yaml)
-- [ ] T022 [P] [US1] Implement CLI entry `verify` in `src/cli/verify.py` (read stdin JSON, print JSON)
+ - [X] T015 [P] [US1] Contract test for POST /v1/verify (text input) in `tests/contract/test_verify_text.py`
+ - [X] T016 [P] [US1] Integration test for natural language flow in `tests/integration/test_text_flow.py`
+ - [X] T017 [US1] Implement text→Claim normalization pipeline in `src/services/pipeline_text.py` (locale, time_window handling)
+ - [X] T018 [US1] Integrate query strategy + search + fetch + evidence assembly in `src/services/pipeline_text.py`
+ - [X] T019 [US1] Implement `unknown` fallback & reason mapping in `src/services/pipeline_text.py`
+ - [X] T020 [P] [US1] Wire `VerificationService.verify_claim()` to text pipeline in `src/services/verification_service.py` (output kind=both)
+ - [X] T021 [US1] Implement API handler for text input in `src/services/api_handlers.py` (validate against contracts/openapi.yaml)
+ - [X] T022 [P] [US1] Implement CLI entry `verify` in `src/cli/verify.py` (read stdin JSON, print JSON)
 
 **Checkpoint**: User Story 1 independently functional (API/CLI both return structured judgments for text input)
 
