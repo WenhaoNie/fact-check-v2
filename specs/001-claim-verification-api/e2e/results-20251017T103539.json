@@ -1,0 +1,902 @@
+[
+  {
+    "id": 1,
+    "claim": "Apple acquired Beats in 2014",
+    "locale": "en",
+    "result": {
+      "judgment": {
+        "kind": "both",
+        "binary": "unknown",
+        "score": 0.45,
+        "reasons": [
+          "仅一般网页来源，可信度有限"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.apple.com/newsroom/2014/05/28Apple-to-Acquire-Beats-Music-Beats-Electronics/",
+            "title": "Apple to Acquire Beats Music & Beats Electronics - Apple",
+            "quote": "CUPERTINO, California—<strong>May 28, 2014</strong>—Apple® today announced it has agreed to acquire the critically acclaimed subscription streaming music service Beats Music, and Beats Electronics, which makes the popular Beats headphones, speakers and audio software. As part of the acquisition, Beats ...",
+            "fetched_at": "2025-10-17T10:33:22Z",
+            "credibility": "web"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Beats_Electronics",
+            "title": "Beats Electronics - Wikipedia",
+            "quote": "eature-limited-width-clientpref-1 vector-feature-limited-width-content-enabled vector-feature-custom-font-size-clientpref-1 vector-feature-appearance-pinned-clientpref-1 vector-feature-night-mode-enabled skin-theme-clientpref-day vector-sticky-header-enabled vector-toc-available\";var cookie=document.",
+            "fetched_at": "2025-10-17T10:33:27Z",
+            "credibility": "web"
+          },
+          {
+            "url": "https://www.macworld.com/article/223466/apple-officially-acquires-beats-for-3-billion.html",
+            "title": "Apple officially acquires Beats for $3 billion | Macworld",
+            "quote": "DOCTYPE html> <html lang=\"en\" data-site=\"macworld.",
+            "fetched_at": "2025-10-17T10:33:29Z",
+            "credibility": "web"
+          }
+        ],
+        "missing_candidates": [],
+        "suspicious_items": [],
+        "audit": {
+          "generated_at": "2025-10-17T10:33:29Z",
+          "tool_traces": [
+            {
+              "step": 1,
+              "action": "generate_queries",
+              "args": {
+                "n": 3
+              },
+              "ok": true,
+              "latency_ms": 0,
+              "error": null
+            },
+            {
+              "step": 2,
+              "action": "search",
+              "args": {
+                "query": "confirm Apple acquired Beats in 2014"
+              },
+              "ok": true,
+              "latency_ms": 1488,
+              "error": null
+            },
+            {
+              "step": 2,
+              "action": "search",
+              "args": {
+                "query": "refute Apple acquired Beats in 2014"
+              },
+              "ok": true,
+              "latency_ms": 1315,
+              "error": null
+            },
+            {
+              "step": 2,
+              "action": "search",
+              "args": {
+                "query": "report Apple acquired Beats in 2014"
+              },
+              "ok": true,
+              "latency_ms": 1414,
+              "error": null
+            }
+          ],
+          "usage": {
+            "tokens_prompt": null,
+            "tokens_completion": null,
+            "duration_ms": null
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": 2,
+    "claim": "Beijing hosted the 2022 Winter Olympics",
+    "locale": "en",
+    "result": {
+      "judgment": {
+        "kind": "both",
+        "binary": "unknown",
+        "score": 0.45,
+        "reasons": [
+          "仅一般网页来源，可信度有限"
+        ],
+        "evidence": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2022_Winter_Olympics",
+            "title": "2022 Winter Olympics - Wikipedia",
+            "quote": "eature-limited-width-clientpref-1 vector-feature-limited-width-content-enabled vector-feature-custom-font-size-clientpref-1 vector-feature-appearance-pinned-clientpref-1 vector-feature-night-mode-enabled skin-theme-clientpref-day vector-sticky-header-enabled vector-toc-available\";var cookie=document.",
+            "fetched_at": "2025-10-17T10:33:34Z",
+            "credibility": "web"
+          },
+          {
+            "url": "https://www.olympics.com/en/olympic-games/beijing-2022",
+            "title": "Beijing 2022 Winter Olympics - Athletes, Medals & Results",
+            "quote": "With a vision of “Joyful Rendezvous upon Pure Ice and Snow,” <strong>Beijing 2022</strong> built on the legacies of the landmark Beijing 2008 Olympic Games and encouraged 300 million people across China to embrace winter sports. The 109 events in seven Olympic winter sports were held in the three competition ...",
+            "fetched_at": "2025-10-17T10:33:34Z",
+            "credibility": "web"
+          },
+          {
+            "url": "https://www.britannica.com/event/Beijing-2022-Olympic-Winter-Games",
+            "title": "Beijing 2022 Olympic Winter Games | Selection, Hosts, Organization, Controversies, Medals, & Facts | Britannica",
+            "quote": "doctype html> <html lang=\"en\" class=\"topic-desktop ui-unknown0 ui-unknown\"> <head prefix=\"og: https://ogp.",
+            "fetched_at": "2025-10-17T10:34:09Z",
+            "credibility": "web"
+          }
+        ],
+        "missing_candidates": [],
+        "suspicious_items": [],
+        "audit": {
+          "generated_at": "2025-10-17T10:34:09Z",
+          "tool_traces": [
+            {
+              "step": 1,
+              "action": "generate_queries",
+              "args": {
+                "n": 3
+              },
+              "ok": true,
+              "latency_ms": 0,
+              "error": null
+            },
+            {
+              "step": 2,
+              "action": "search",
+              "args": {
+                "query": "confirm Beijing hosted the 2022 Winter Olympics"
+              },
+              "ok": true,
+              "latency_ms": 1382,
+              "error": null
+            },
+            {
+              "step": 2,
+              "action": "search",
+              "args": {
+                "query": "refute Beijing hosted the 2022 Winter Olympics"
+              },
+              "ok": true,
+              "latency_ms": 1335,
+              "error": null
+            },
+            {
+              "step": 2,
+              "action": "search",
+              "args": {
+                "query": "report Beijing hosted the 2022 Winter Olympics"
+              },
+              "ok": true,
+              "latency_ms": 1309,
+              "error": null
+            }
+          ],
+          "usage": {
+            "tokens_prompt": null,
+            "tokens_completion": null,
+            "duration_ms": null
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": 3,
+    "claim": "The Great Wall is visible from space with the naked eye",
+    "locale": "en",
+    "result": {
+      "judgment": {
+        "kind": "both",
+        "binary": "unknown",
+        "score": 0.6,
+        "reasons": [
+          "发现权威/登记类来源，但需进一步核验；暂返回 unknown"
+        ],
+        "evidence": [
+          {
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3972694/",
+            "title": "Is it Really Possible to See the Great Wall of China from Space with a Naked Eye? - PMC",
+            "quote": "DOCTYPE html> <html lang=\"en\" > <head > <meta charset=\"UTF-8\" /> <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" /> <meta name=\"HandheldFriendly\" content=\"True\" /> <meta name=\"MobileOptimized\" content=\"320\" /> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.",
+            "fetched_at": "2025-10-17T10:34:14Z",
+            "credibility": "registry"
+          },
+          {
+            "url": "https://www.skyatnightmagazine.com/space-science/can-you-see-great-wall-china-from-space",
+            "title": "Can you see the Great Wall of China from space? | BBC Sky at Night Magazine",
+            "quote": "DOCTYPE html><html lang=\"en\" data-critters-container><head> <base href=\"/\"> <meta charset=\"utf-8\"> <title>Can you see the Great Wall of China from space?",
+            "fetched_at": "2025-10-17T10:34:15Z",
+            "credibility": "web"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Artificial_structures_visible_from_space",
+            "title": "Artificial structures visible from space - Wikipedia",
+            "quote": "eature-limited-width-clientpref-1 vector-feature-limited-width-content-enabled vector-feature-custom-font-size-clientpref-1 vector-feature-appearance-pinned-clientpref-1 vector-feature-night-mode-enabled skin-theme-clientpref-day vector-sticky-header-enabled vector-toc-available\";var cookie=document.",
+            "fetched_at": "2025-10-17T10:34:16Z",
+            "credibility": "web"
+          }
+        ],
+        "missing_candidates": [],
+        "suspicious_items": [],
+        "audit": {
+          "generated_at": "2025-10-17T10:34:16Z",
+          "tool_traces": [
+            {
+              "step": 1,
+              "action": "generate_queries",
+              "args": {
+                "n": 3
+              },
+              "ok": true,
+              "latency_ms": 0,
+              "error": null
+            },
+            {
+              "step": 2,
+              "action": "search",
+              "args": {
+                "query": "confirm The Great Wall is visible from space with the naked eye"
+              },
+              "ok": true,
+              "latency_ms": 1253,
+              "error": null
+            },
+            {
+              "step": 2,
+              "action": "search",
+              "args": {
+                "query": "refute The Great Wall is visible from space with the naked eye"
+              },
+              "ok": true,
+              "latency_ms": 1103,
+              "error": null
+            },
+            {
+              "step": 2,
+              "action": "search",
+              "args": {
+                "query": "report The Great Wall is visible from space with the naked eye"
+              },
+              "ok": true,
+              "latency_ms": 1062,
+              "error": null
+            }
+          ],
+          "usage": {
+            "tokens_prompt": null,
+            "tokens_completion": null,
+            "duration_ms": null
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": 4,
+    "claim": "SpaceX first launched Falcon Heavy in 2018",
+    "locale": "en",
+    "result": {
+      "judgment": {
+        "kind": "both",
+        "binary": "unknown",
+        "score": 0.45,
+        "reasons": [
+          "仅一般网页来源，可信度有限"
+        ],
+        "evidence": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Falcon_Heavy_test_flight",
+            "title": "Falcon Heavy test flight - Wikipedia",
+            "quote": "eature-limited-width-clientpref-1 vector-feature-limited-width-content-enabled vector-feature-custom-font-size-clientpref-1 vector-feature-appearance-pinned-clientpref-1 vector-feature-night-mode-enabled skin-theme-clientpref-day vector-sticky-header-enabled vector-toc-available\";var cookie=document.",
+            "fetched_at": "2025-10-17T10:34:23Z",
+            "credibility": "web"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Falcon_Heavy",
+            "title": "Falcon Heavy - Wikipedia",
+            "quote": "eature-limited-width-clientpref-1 vector-feature-limited-width-content-enabled vector-feature-custom-font-size-clientpref-1 vector-feature-appearance-pinned-clientpref-1 vector-feature-night-mode-enabled skin-theme-clientpref-day vector-sticky-header-enabled vector-toc-available\";var cookie=document.",
+            "fetched_at": "2025-10-17T10:34:24Z",
+            "credibility": "web"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/List_of_Falcon_9_and_Falcon_Heavy_launches",
+            "title": "List of Falcon 9 and Falcon Heavy launches - Wikipedia",
+            "quote": "eature-limited-width-clientpref-1 vector-feature-limited-width-content-enabled vector-feature-custom-font-size-clientpref-1 vector-feature-appearance-pinned-clientpref-1 vector-feature-night-mode-enabled skin-theme-clientpref-day vector-sticky-header-enabled vector-toc-available\";var cookie=document.",
+            "fetched_at": "2025-10-17T10:34:26Z",
+            "credibility": "web"
+          }
+        ],
+        "missing_candidates": [],
+        "suspicious_items": [],
+        "audit": {
+          "generated_at": "2025-10-17T10:34:26Z",
+          "tool_traces": [
+            {
+              "step": 1,
+              "action": "generate_queries",
+              "args": {
+                "n": 3
+              },
+              "ok": true,
+              "latency_ms": 0,
+              "error": null
+            },
+            {
+              "step": 2,
+              "action": "search",
+              "args": {
+                "query": "confirm SpaceX first launched Falcon Heavy in 2018"
+              },
+              "ok": true,
+              "latency_ms": 1981,
+              "error": null
+            },
+            {
+              "step": 2,
+              "action": "search",
+              "args": {
+                "query": "refute SpaceX first launched Falcon Heavy in 2018"
+              },
+              "ok": true,
+              "latency_ms": 1743,
+              "error": null
+            },
+            {
+              "step": 2,
+              "action": "search",
+              "args": {
+                "query": "report SpaceX first launched Falcon Heavy in 2018"
+              },
+              "ok": true,
+              "latency_ms": 1842,
+              "error": null
+            }
+          ],
+          "usage": {
+            "tokens_prompt": null,
+            "tokens_completion": null,
+            "duration_ms": null
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": 5,
+    "claim": "WHO declared COVID-19 a pandemic in March 2020",
+    "locale": "en",
+    "result": {
+      "judgment": {
+        "kind": "both",
+        "binary": "unknown",
+        "score": 0.6,
+        "reasons": [
+          "发现权威/登记类来源，但需进一步核验；暂返回 unknown"
+        ],
+        "evidence": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32191675/",
+            "title": "WHO Declares COVID-19 a Pandemic - PubMed",
+            "quote": "DOCTYPE html> <html lang=\"en\" > <head itemscope itemtype=\"http://schema.",
+            "fetched_at": "2025-10-17T10:34:32Z",
+            "credibility": "registry"
+          },
+          {
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7569573/",
+            "title": "WHO Declares COVID-19 a Pandemic - PMC",
+            "quote": "DOCTYPE html> <html lang=\"en\" > <head > <meta charset=\"UTF-8\" /> <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" /> <meta name=\"HandheldFriendly\" content=\"True\" /> <meta name=\"MobileOptimized\" content=\"320\" /> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.",
+            "fetched_at": "2025-10-17T10:34:33Z",
+            "credibility": "registry"
+          },
+          {
+            "url": "https://www.nm.org/healthbeat/medical-advances/new-therapies-and-drug-trials/covid-19-pandemic-timeline",
+            "title": "When Did the Pandemic Start and End? | Northwestern Medicine",
+            "quote": "DOCTYPE html> <html dir=\"ltr\" lang=\"en-US\" class=\"no-js\"> <head> <meta charset=\"utf-8\" /> <!",
+            "fetched_at": "2025-10-17T10:34:35Z",
+            "credibility": "web"
+          }
+        ],
+        "missing_candidates": [],
+        "suspicious_items": [],
+        "audit": {
+          "generated_at": "2025-10-17T10:34:35Z",
+          "tool_traces": [
+            {
+              "step": 1,
+              "action": "generate_queries",
+              "args": {
+                "n": 3
+              },
+              "ok": true,
+              "latency_ms": 0,
+              "error": null
+            },
+            {
+              "step": 2,
+              "action": "search",
+              "args": {
+                "query": "confirm WHO declared COVID-19 a pandemic in March 2020"
+              },
+              "ok": true,
+              "latency_ms": 1244,
+              "error": null
+            },
+            {
+              "step": 2,
+              "action": "search",
+              "args": {
+                "query": "refute WHO declared COVID-19 a pandemic in March 2020"
+              },
+              "ok": true,
+              "latency_ms": 2456,
+              "error": null
+            },
+            {
+              "step": 2,
+              "action": "search",
+              "args": {
+                "query": "report WHO declared COVID-19 a pandemic in March 2020"
+              },
+              "ok": true,
+              "latency_ms": 1537,
+              "error": null
+            }
+          ],
+          "usage": {
+            "tokens_prompt": null,
+            "tokens_completion": null,
+            "duration_ms": null
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": 6,
+    "claim": "OpenAI released GPT-4 in 2023",
+    "locale": "en",
+    "result": {
+      "judgment": {
+        "kind": "both",
+        "binary": "unknown",
+        "score": 0.45,
+        "reasons": [
+          "仅一般网页来源，可信度有限"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.searchenginejournal.com/gpt-4-is-multimodal/481993/",
+            "title": "OpenAI GPT-4 Arriving Mid-March 2023",
+            "quote": "uiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"/> <meta charset=\"utf-8\"/> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/> <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' /> <link rel=\"preconnect\" href=\"https://cmp.",
+            "fetched_at": "2025-10-17T10:34:41Z",
+            "credibility": "web"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/GPT-4",
+            "title": "GPT-4 - Wikipedia",
+            "quote": "eature-limited-width-clientpref-1 vector-feature-limited-width-content-enabled vector-feature-custom-font-size-clientpref-1 vector-feature-appearance-pinned-clientpref-1 vector-feature-night-mode-enabled skin-theme-clientpref-day vector-sticky-header-enabled vector-toc-available\";var cookie=document.",
+            "fetched_at": "2025-10-17T10:34:42Z",
+            "credibility": "web"
+          },
+          {
+            "url": "https://techcrunch.com/2023/03/14/openai-releases-gpt-4-ai-that-it-claims-is-state-of-the-art/",
+            "title": "OpenAI releases GPT-4, a multimodal AI that it claims is state-of-the-art | TechCrunch",
+            "quote": "DOCTYPE html> <html lang=\"en-US\"> <head> <meta charset=\"UTF-8\" /> <script>(function(html){html.",
+            "fetched_at": "2025-10-17T10:34:44Z",
+            "credibility": "web"
+          }
+        ],
+        "missing_candidates": [],
+        "suspicious_items": [],
+        "audit": {
+          "generated_at": "2025-10-17T10:34:44Z",
+          "tool_traces": [
+            {
+              "step": 1,
+              "action": "generate_queries",
+              "args": {
+                "n": 3
+              },
+              "ok": true,
+              "latency_ms": 0,
+              "error": null
+            },
+            {
+              "step": 2,
+              "action": "search",
+              "args": {
+                "query": "confirm OpenAI released GPT-4 in 2023"
+              },
+              "ok": true,
+              "latency_ms": 1440,
+              "error": null
+            },
+            {
+              "step": 2,
+              "action": "search",
+              "args": {
+                "query": "refute OpenAI released GPT-4 in 2023"
+              },
+              "ok": true,
+              "latency_ms": 1269,
+              "error": null
+            },
+            {
+              "step": 2,
+              "action": "search",
+              "args": {
+                "query": "report OpenAI released GPT-4 in 2023"
+              },
+              "ok": true,
+              "latency_ms": 1327,
+              "error": null
+            }
+          ],
+          "usage": {
+            "tokens_prompt": null,
+            "tokens_completion": null,
+            "duration_ms": null
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": 7,
+    "claim": "Google reorganized into Alphabet in 2015",
+    "locale": "en",
+    "result": {
+      "judgment": {
+        "kind": "both",
+        "binary": "unknown",
+        "score": 0.45,
+        "reasons": [
+          "仅一般网页来源，可信度有限"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.engadget.com/2015-10-02-google-alphabet-restructuring.html",
+            "title": "Google is now Alphabet, the owner of Google",
+            "quote": "DOCTYPE html><html lang=\"en-US\" data-site=\"engadget\"><head><meta charSet=\"utf-8\"/><link href=\"//ncp-gw-frontpage.",
+            "fetched_at": "2025-10-17T10:34:49Z",
+            "credibility": "web"
+          },
+          {
+            "url": "https://www.wired.com/2015/08/how-google-became-alphabet/",
+            "title": "How Google Became Alphabet, From A to Z | WIRED",
+            "quote": "application-tap-highlight\" content=\"no\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><meta name=\"author\" content=\"Julia Greenberg\"/><meta name=\"copyright\" content=\"Copyright (c) Condé Nast 2025\"/><meta name=\"description\" content=\"WIRED has followed Google since the beginning.",
+            "fetched_at": "2025-10-17T10:34:56Z",
+            "credibility": "web"
+          },
+          {
+            "url": "https://techcrunch.com/2017/09/04/google-parent-alphabet-forms-holding-company-xxvi-to-complete-2015-corporate-reorganization/",
+            "title": "Google parent Alphabet forms holding company, XXVI, to complete 2015 corporate reorganization | TechCrunch",
+            "quote": "DOCTYPE html> <html lang=\"en-US\"> <head> <meta charset=\"UTF-8\" /> <script>(function(html){html.",
+            "fetched_at": "2025-10-17T10:34:58Z",
+            "credibility": "web"
+          }
+        ],
+        "missing_candidates": [],
+        "suspicious_items": [],
+        "audit": {
+          "generated_at": "2025-10-17T10:34:58Z",
+          "tool_traces": [
+            {
+              "step": 1,
+              "action": "generate_queries",
+              "args": {
+                "n": 3
+              },
+              "ok": true,
+              "latency_ms": 0,
+              "error": null
+            },
+            {
+              "step": 2,
+              "action": "search",
+              "args": {
+                "query": "confirm Google reorganized into Alphabet in 2015"
+              },
+              "ok": true,
+              "latency_ms": 1320,
+              "error": null
+            },
+            {
+              "step": 2,
+              "action": "search",
+              "args": {
+                "query": "refute Google reorganized into Alphabet in 2015"
+              },
+              "ok": true,
+              "latency_ms": 1299,
+              "error": null
+            },
+            {
+              "step": 2,
+              "action": "search",
+              "args": {
+                "query": "report Google reorganized into Alphabet in 2015"
+              },
+              "ok": true,
+              "latency_ms": 1282,
+              "error": null
+            }
+          ],
+          "usage": {
+            "tokens_prompt": null,
+            "tokens_completion": null,
+            "duration_ms": null
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": 8,
+    "claim": "London hosted the 2012 Summer Olympics",
+    "locale": "en",
+    "result": {
+      "judgment": {
+        "kind": "both",
+        "binary": "unknown",
+        "score": 0.45,
+        "reasons": [
+          "仅一般网页来源，可信度有限"
+        ],
+        "evidence": [
+          {
+            "url": "https://en.wikipedia.org/wiki/2012_Summer_Olympics",
+            "title": "2012 Summer Olympics - Wikipedia",
+            "quote": "eature-limited-width-clientpref-1 vector-feature-limited-width-content-enabled vector-feature-custom-font-size-clientpref-1 vector-feature-appearance-pinned-clientpref-1 vector-feature-night-mode-enabled skin-theme-clientpref-day vector-sticky-header-enabled vector-toc-available\";var cookie=document.",
+            "fetched_at": "2025-10-17T10:35:03Z",
+            "credibility": "web"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/London_bid_for_the_2012_Summer_Olympics",
+            "title": "London bid for the 2012 Summer Olympics - Wikipedia",
+            "quote": "eature-limited-width-clientpref-1 vector-feature-limited-width-content-enabled vector-feature-custom-font-size-clientpref-1 vector-feature-appearance-pinned-clientpref-1 vector-feature-night-mode-enabled skin-theme-clientpref-day vector-sticky-header-enabled vector-toc-available\";var cookie=document.",
+            "fetched_at": "2025-10-17T10:35:04Z",
+            "credibility": "web"
+          },
+          {
+            "url": "https://www.theguardian.com/uk/2005/jul/06/olympics2012.olympicgames1",
+            "title": "London wins 2012 Olympics | Olympic Games 2012 | The Guardian",
+            "quote": "doctype html> <html lang=\"en\" > <head> <!",
+            "fetched_at": "2025-10-17T10:35:06Z",
+            "credibility": "web"
+          }
+        ],
+        "missing_candidates": [],
+        "suspicious_items": [],
+        "audit": {
+          "generated_at": "2025-10-17T10:35:06Z",
+          "tool_traces": [
+            {
+              "step": 1,
+              "action": "generate_queries",
+              "args": {
+                "n": 3
+              },
+              "ok": true,
+              "latency_ms": 0,
+              "error": null
+            },
+            {
+              "step": 2,
+              "action": "search",
+              "args": {
+                "query": "confirm London hosted the 2012 Summer Olympics"
+              },
+              "ok": true,
+              "latency_ms": 1442,
+              "error": null
+            },
+            {
+              "step": 2,
+              "action": "search",
+              "args": {
+                "query": "refute London hosted the 2012 Summer Olympics"
+              },
+              "ok": true,
+              "latency_ms": 1401,
+              "error": null
+            },
+            {
+              "step": 2,
+              "action": "search",
+              "args": {
+                "query": "report London hosted the 2012 Summer Olympics"
+              },
+              "ok": true,
+              "latency_ms": 1437,
+              "error": null
+            }
+          ],
+          "usage": {
+            "tokens_prompt": null,
+            "tokens_completion": null,
+            "duration_ms": null
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": 9,
+    "claim": "Bitcoin's maximum supply is 21 million",
+    "locale": "en",
+    "result": {
+      "judgment": {
+        "kind": "both",
+        "binary": "unknown",
+        "score": 0.45,
+        "reasons": [
+          "仅一般网页来源，可信度有限"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.kraken.com/learn/how-many-bitcoin-are-there-bitcoin-supply-explained",
+            "title": "How many bitcoin are there? Bitcoin supply explained",
+            "quote": "<strong>Bitcoin&#x27;s supply is finite and capped at 21 million</strong>. Explore how many bitcoin exist in 2024 and the impact a capped supply has on cryptocurrency value.",
+            "fetched_at": "2025-10-17T10:35:10Z",
+            "credibility": "web"
+          },
+          {
+            "url": "https://river.com/learn/can-bitcoins-hard-cap-of-21-million-be-changed/",
+            "title": "Can Bitcoin's Hard Cap of 21 Million Be Changed? | River Learn - Bitcoin Basics",
+            "quote": "DOCTYPE html> <html lang=\"en-us\"> <head> <meta charset=\"utf-8\"> <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"> <title itemprop=\"name\">Can Bitcoin&#39;s Hard Cap of 21 Million Be Changed?",
+            "fetched_at": "2025-10-17T10:35:16Z",
+            "credibility": "web"
+          },
+          {
+            "url": "https://www.ccn.com/education/how-does-the-bitcoin-source-code-define-its-21-million-cap/",
+            "title": "How Does The Bitcoin Source Code Define Its 21 Million Cap?",
+            "quote": "doctype html> <html lang=\"en-US\"> <head> <meta charset=\"UTF-8\"> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"> <link rel=\"profile\" href=\"https://gmpg.",
+            "fetched_at": "2025-10-17T10:35:17Z",
+            "credibility": "web"
+          }
+        ],
+        "missing_candidates": [],
+        "suspicious_items": [],
+        "audit": {
+          "generated_at": "2025-10-17T10:35:17Z",
+          "tool_traces": [
+            {
+              "step": 1,
+              "action": "generate_queries",
+              "args": {
+                "n": 3
+              },
+              "ok": true,
+              "latency_ms": 0,
+              "error": null
+            },
+            {
+              "step": 2,
+              "action": "search",
+              "args": {
+                "query": "confirm Bitcoin's maximum supply is 21 million"
+              },
+              "ok": true,
+              "latency_ms": 1180,
+              "error": null
+            },
+            {
+              "step": 2,
+              "action": "search",
+              "args": {
+                "query": "refute Bitcoin's maximum supply is 21 million"
+              },
+              "ok": true,
+              "latency_ms": 1280,
+              "error": null
+            },
+            {
+              "step": 2,
+              "action": "search",
+              "args": {
+                "query": "report Bitcoin's maximum supply is 21 million"
+              },
+              "ok": true,
+              "latency_ms": 1228,
+              "error": null
+            }
+          ],
+          "usage": {
+            "tokens_prompt": null,
+            "tokens_completion": null,
+            "duration_ms": null
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": 10,
+    "claim": "华为成立于1987年",
+    "locale": "zh",
+    "result": {
+      "judgment": {
+        "kind": "both",
+        "binary": "unknown",
+        "score": 0.45,
+        "reasons": [
+          "仅一般网页来源，可信度有限"
+        ],
+        "evidence": [
+          {
+            "url": "https://baike.baidu.com/item/%E5%8D%8E%E4%B8%BA%E6%8A%80%E6%9C%AF%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8/6455903",
+            "title": "华为技术有限公司_百度百科",
+            "quote": "DOCTYPE html><html class=\"\"><head><meta charset=\"UTF-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"><meta name=\"referrer\" content=\"always\"><title>华为技术有限公司_百度百科</title><meta name=\"description\" content=\"华为技术有限公司（Huawei Technologies Co.",
+            "fetched_at": "2025-10-17T10:35:24Z",
+            "credibility": "web"
+          },
+          {
+            "url": "https://www.huawei.com/cn/corporate-information/",
+            "title": "公司简介 - 关于华为",
+            "quote": "DOCTYPE html> <html lang=\"zh\" data-url=\"//www.",
+            "fetched_at": "2025-10-17T10:35:37Z",
+            "credibility": "web"
+          },
+          {
+            "url": "https://zh.wikipedia.org/zh-cn/%E5%8D%8E%E4%B8%BA",
+            "title": "华为 - 维基百科，自由的百科全书",
+            "quote": "eature-limited-width-clientpref-1 vector-feature-limited-width-content-enabled vector-feature-custom-font-size-clientpref-1 vector-feature-appearance-pinned-clientpref-1 vector-feature-night-mode-enabled skin-theme-clientpref-day vector-sticky-header-enabled vector-toc-available\";var cookie=document.",
+            "fetched_at": "2025-10-17T10:35:39Z",
+            "credibility": "web"
+          }
+        ],
+        "missing_candidates": [],
+        "suspicious_items": [],
+        "audit": {
+          "generated_at": "2025-10-17T10:35:39Z",
+          "tool_traces": [
+            {
+              "step": 1,
+              "action": "generate_queries",
+              "args": {
+                "n": 3
+              },
+              "ok": true,
+              "latency_ms": 0,
+              "error": null
+            },
+            {
+              "step": 2,
+              "action": "search",
+              "args": {
+                "query": "证实 华为成立于1987年"
+              },
+              "ok": true,
+              "latency_ms": 1233,
+              "error": null
+            },
+            {
+              "step": 2,
+              "action": "search",
+              "args": {
+                "query": "驳斥 华为成立于1987年"
+              },
+              "ok": true,
+              "latency_ms": 1202,
+              "error": null
+            },
+            {
+              "step": 2,
+              "action": "search",
+              "args": {
+                "query": "报道 华为成立于1987年"
+              },
+              "ok": true,
+              "latency_ms": 1223,
+              "error": null
+            }
+          ],
+          "usage": {
+            "tokens_prompt": null,
+            "tokens_completion": null,
+            "duration_ms": null
+          }
+        }
+      }
+    }
+  }
+]
